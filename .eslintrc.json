@@ -1,0 +1,45 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "sharedArrayBuffer": "readonly"
+  },
+  "compilerOptions": {
+    "jsx": "react"
+  },
+  "ignorePatterns": ["!.*", "**/*.js", "dist", "node_modules"],
+  "plugins": [
+    "import",
+    "react",
+    "react-hooks",
+    "simple-import-sort"
+  ],
+  "exclude": [
+    "__tests__/**/*-test.ts",
+    "build/*",
+    "node_modules/*",
+    "public/*",
+    "styles/*",
+    "templates/*"
+  ],
+  "rules": {}
+}
