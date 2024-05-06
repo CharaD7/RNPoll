@@ -5,7 +5,7 @@ node_modules/
 
 # package lock files
 package-lock.json
-yarn.lock
+# yarn.lock
 
 # log files
 npm-debug.log
