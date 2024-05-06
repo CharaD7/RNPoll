@@ -6,7 +6,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "prepare": "yarn husky init"
   },
   "dependencies": {
     "@types/react": "~18.2.45",
@@ -34,6 +35,11 @@
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5"
   },
-  "prepare": "husky install",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --ignore-unknown --write .",
+      "eslint --fix ."
+    ]
+  },
   "private": true
 }
