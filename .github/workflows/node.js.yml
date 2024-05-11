@@ -26,5 +26,3 @@ jobs:
 
       - name: Start app
         run: npm start
-        env:
-          CI: true
