@@ -1,11 +1,11 @@
-### RNPOLL APP
+# RNPOLL APP
 ___
 
-### DESCRIPTION
+# DESCRIPTION
 A simple polling App built for android and iOS devices. This is an inspiration from notJustDev,
 additional features will be added in future updates.
 
-### TECH STACK
+# TECH STACK
 
 ## Frameworks and Tools
 * [Expo](https://expo.dev)
