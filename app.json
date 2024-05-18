@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "RNPoll",
+    "scheme": "RNPoll",
     "slug": "RNPoll",
     "version": "1.0.0",
     "orientation": "portrait",
