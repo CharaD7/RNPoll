@@ -5,7 +5,7 @@
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
   "quoteProps": "as-needed",
-  "singleQuote": false,
+  "singleQuote": true,
   "semi": true,
   "useTabs": false,
   "tabWidth": 2,
