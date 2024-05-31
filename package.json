@@ -1,9 +1,14 @@
 {
   "name": "rnpoll",
   "version": "1.0.0",
+  "description": "A basic expo react native polls app",
+  "repository": "git@github.com:CharaD7/RNPoll.git",
+  "author": "CharaD7 <jijakahn6@gmail.com>",
+  "type": "module",
   "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
+    "lint": "eslint --fix .",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -26,18 +31,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0",
-    "eslint": "^9.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "eslint": "^9.3.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-n": "^17.4.0",
+    "eslint-plugin-n": "^17.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-native": "^4.1.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
+    "globals": "^15.3.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5"
@@ -45,8 +51,9 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "prettier --ignore-unknown --write .",
-      "eslint --fix ."
+      "eslint --debug"
     ]
   },
-  "private": true
+  "private": true,
+  "license": "MIT"
 }
