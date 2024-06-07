@@ -1,18 +1,22 @@
+import { Stack } from 'expo-router';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 const polls = [1, 2, 4];
 
 export default function HomeScreen() {
   return (
-    <FlatList
-      data={polls}
-      contentContainerStyle={styles.container}
-      renderItem={() => (
-        <View style={styles.pollContainer}>
-          <Text style={styles.pollTitle}>Example Poll Question</Text>
-        </View>
-      )}
-    />
+    <>
+      <Stack.Screen options={{ title: 'Polls' }} />
+      <FlatList
+        data={polls}
+        contentContainerStyle={styles.container}
+        renderItem={() => (
+          <View style={styles.pollContainer}>
+            <Text style={styles.pollTitle}>Example Poll Question</Text>
+          </View>
+        )}
+      />
+    </>
   );
 }
 
