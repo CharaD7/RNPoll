@@ -52,7 +52,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "prettier --ignore-unknown --write .",
-      "eslint --fix ."
+      "eslint --debug"
     ]
   },
   "private": true,
