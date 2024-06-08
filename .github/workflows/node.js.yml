@@ -10,13 +10,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -24,12 +22,10 @@ jobs:
           node-version: 20x
           # node-version: 20.9.0
 
-
       - name: Install dependencies
         run: npm install
         env:
           CI: true
-
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -38,7 +34,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
 
       - name: Start app
         run: npm start

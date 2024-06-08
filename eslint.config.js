@@ -1,4 +1,4 @@
-//import airbnb from '@typescript-eslint/eslint-plugin';
+//import babelParser from '@babel/eslint-parser';
 import globals from 'globals';
 import js from '@eslint/js';
 
@@ -10,6 +10,7 @@ export default [
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'module',
+      //parser: babelParser,
       globals: {
         ...globals.browser,
       },
