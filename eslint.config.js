@@ -1,6 +1,4 @@
-//import babelParser from '@babel/eslint-parser';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import globals from 'globals';
 import js from '@eslint/js';
 import ts from '@typescript-eslint/eslint-plugin';
 import { FlatCompat } from '@eslint/eslintrc';
@@ -30,7 +28,6 @@ export default [
     ],
   },
   ...compat.config({
-    // files: ['**/*.ts', '**/*.tsx'],
     plugins: ['import', 'react', 'react-hooks', 'simple-import-sort'],
     env: {
       es2022: true,
@@ -39,18 +36,10 @@ export default [
     parserOptions: {
       project: './tsconfig.json',
     },
-    // languageOptions: {
-    //   ecmaVersion: 2022,
-    //   parserOptions: {
-    //     ecmaFeatures: {
-    //       jsx: true,
-    //     },
-    //   },
-    //   sourceType: 'module',
-    //   globals: {
-    //     ...globals.browser,
-    //   },
-    // },
+    globals: {
+      Atomics: 'readonly',
+      sharedArrayBuffer: 'readonly',
+    },
     rules: {
       indent: 'error',
       semi: ['error', 'always'],
