@@ -9,8 +9,12 @@ export default [
   {
     languageOptions: {
       ecmaVersion: 2022,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
       sourceType: 'module',
-      //parser: babelParser,
       globals: {
         ...globals.browser,
       },
