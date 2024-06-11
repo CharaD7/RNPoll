@@ -36,6 +36,9 @@ export default [
       es2022: true,
       node: true,
     },
+    parserOptions: {
+      project: './tsconfig.json',
+    },
     // languageOptions: {
     //   ecmaVersion: 2022,
     //   parserOptions: {
