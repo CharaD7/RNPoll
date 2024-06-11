@@ -1,9 +1,11 @@
 //import babelParser from '@babel/eslint-parser';
 import globals from 'globals';
 import js from '@eslint/js';
+import ts from '@typescript-eslint/eslint-plugin';
 
 export default [
   js.configs.recommended,
+  ts.configs.recommended,
   {
     ignores: [
       '!.*',
