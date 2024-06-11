@@ -3,10 +3,9 @@ import globals from 'globals';
 import js from '@eslint/js';
 
 export default [
-  //airbnb.hooks,
-  //airbnb.typescript,
   js.configs.recommended,
   {
+    ignores: ['!.*', '*.js', 'dist', 'node_modules'],
     languageOptions: {
       ecmaVersion: 2022,
       parserOptions: {
