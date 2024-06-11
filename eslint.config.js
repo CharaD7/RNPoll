@@ -34,6 +34,7 @@ export default [
     },
     rules: {
       indent: 'error',
+      semi: ['error', 'always'],
     },
   },
   eslintConfigPrettier,
