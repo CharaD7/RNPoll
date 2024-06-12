@@ -14,8 +14,6 @@ const compat = new FlatCompat({
 });
 
 export default [
-  js.configs.recommended,
-  ts.configs.recommended,
   {
     ignores: [
       '!.*',
@@ -27,6 +25,8 @@ export default [
       'templates',
     ],
   },
+  js.configs.recommended,
+  ts.configs.recommended,
   ...compat.config({
     plugins: ['import', 'react', 'react-hooks', 'simple-import-sort'],
     env: {
