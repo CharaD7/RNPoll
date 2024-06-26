@@ -1,8 +1,6 @@
 import tsParser from '@typescript-eslint/parser';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import globals from 'globals';
-// import js from '@eslint/js';
-// import ts from '@typescript-eslint/eslint-plugin';
 import { FlatCompat } from '@eslint/eslintrc';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -16,8 +14,6 @@ const compat = new FlatCompat({
 });
 
 export default [
-  // js.configs.recommended, // Recommended config applied to all files
-  // ts.configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
     ...compat.config({
@@ -36,8 +32,6 @@ export default [
     },
     ignores: ['!.*', '**/*.js', 'dist', 'public', 'styles', 'templates'],
     rules: {
-      // ...ts.configs.recommended.rules,
-      // ...js.configs.recommended.rules,
       indent: 'error',
       semi: ['error', 'always'],
       quotes: ['error', 'double'],
