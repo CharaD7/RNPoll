@@ -1,6 +1,8 @@
+import tsParser from '@typescript-eslint/parser';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import js from '@eslint/js';
-import ts from '@typescript-eslint/eslint-plugin';
+import globals from 'globals';
+// import js from '@eslint/js';
+// import ts from '@typescript-eslint/eslint-plugin';
 import { FlatCompat } from '@eslint/eslintrc';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -14,33 +16,28 @@ const compat = new FlatCompat({
 });
 
 export default [
+  // js.configs.recommended, // Recommended config applied to all files
+  // ts.configs.recommended,
   {
-    ignores: [
-      '!.*',
-      '**/*.js',
-      'dist',
-      'node_modules',
-      'public',
-      'styles',
-      'templates',
-    ],
-  },
-  js.configs.recommended,
-  ts.configs.recommended,
-  ...compat.config({
-    plugins: ['import', 'react', 'react-hooks', 'simple-import-sort'],
-    env: {
-      es2022: true,
-      node: true,
+    files: ['**/*.ts', '**/*.tsx'],
+    ...compat.config({
+      plugins: ['react', 'react-hooks', 'simple-import-sort', 'import'],
+      // extends: ['eslint:recommended']
+    }),
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: ['tsconfig.json'],
+      },
+      ecmaVersion: 2022,
+      globals: {
+        ...globals.browser,
+      },
     },
-    parserOptions: {
-      project: './tsconfig.json',
-    },
-    globals: {
-      Atomics: 'readonly',
-      sharedArrayBuffer: 'readonly',
-    },
+    ignores: ['!.*', '**/*.js', 'dist', 'public', 'styles', 'templates'],
     rules: {
+      // ...ts.configs.recommended.rules,
+      // ...js.configs.recommended.rules,
       indent: 'error',
       semi: ['error', 'always'],
       quotes: ['error', 'double'],
@@ -58,6 +55,7 @@ export default [
           },
         },
       ],
+      'max-len': ['error', { code: 120 }],
       'linebreak-style': 'off',
       'no-extra-semi': 'error',
       'no-use-before-define': 'off',
@@ -74,6 +72,6 @@ export default [
       ],
       '@typescript-eslint/no-use-before-define': 'warn',
     },
-  }),
+  },
   eslintConfigPrettier,
 ];
